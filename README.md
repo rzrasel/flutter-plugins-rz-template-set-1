@@ -62,3 +62,8 @@ git status
 
 ---
 
+## License
+
+MIT License  
+See the LICENSE file for details.
+
