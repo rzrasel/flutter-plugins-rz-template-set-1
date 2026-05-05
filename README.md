@@ -24,7 +24,7 @@ Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  rz_template_set:
+  rz_template_set_1:
     git:
       url: https://github.com/rzrasel/flutter-plugins-rz-template-set-1.git
       ref: main
@@ -37,7 +37,7 @@ git push origin v1.0.0
 
 ```yaml
 dependencies:
-  rz_template_set:
+  rz_template_set_1:
     git:
       url: https://github.com/rzrasel/flutter-plugins-rz-template-set-1.git
       ref: v1.0.0
