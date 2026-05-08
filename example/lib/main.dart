@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  final _rzTemplateSet_1Plugin = RzTemplateSet_1();
+  //final _rzTemplateSet_1Plugin = RzTemplateSet_1();
 
   @override
   void initState() {
@@ -30,21 +30,21 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
-    try {
+    /*try {
       platformVersion =
           await _rzTemplateSet_1Plugin.getPlatformVersion() ?? 'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
-    }
+    }*/
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
-    setState(() {
+    /*setState(() {
       _platformVersion = platformVersion;
-    });
+    });*/
   }
 
   @override

@@ -1,8 +1,6 @@
-
-import 'rz_template_set_1_platform_interface.dart';
-
-class RzTemplateSet_1 {
-  Future<String?> getPlatformVersion() {
-    return RzTemplateSet_1Platform.instance.getPlatformVersion();
-  }
-}
+export 'src/screen/rz_desktop_layout.dart';
+export 'src/screen/rz_mobile_layout.dart';
+export 'src/screen/rz_tablet_layout.dart';
+//
+export 'src/template/rz_responsive_design.dart';
+export 'src/template/rz_template.dart';
