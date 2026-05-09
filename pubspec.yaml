@@ -3,6 +3,8 @@ description: "flutter-plugins-rz-template-set-1 — A Flutter plugin that provid
 version: 0.0.1
 homepage:
 
+publish_to: none
+
 environment:
   sdk: ^3.10.4
   flutter: '>=3.3.0'
@@ -14,7 +16,19 @@ dependencies:
     sdk: flutter
   web: ^1.0.0
   plugin_platform_interface: ^2.0.2
+  #
+  get: ^4.7.3
+  iconsax: ^0.0.8
   responsive_builder_kit: ^0.0.7
+  #
+  rz_library_utilities:
+    git:
+      url: https://github.com/rzrasel/flutter-plugins-rz-library-utilities.git
+      ref: vref-1.0.8
+  rz_theme_set_1:
+    git:
+      url: https://github.com/rzrasel/flutter-plugins-rz-theme-set-1.git
+      ref: vref-1.0.15
 
 dev_dependencies:
   flutter_test:
