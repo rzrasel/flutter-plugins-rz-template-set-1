@@ -26,7 +26,9 @@ class RzDesktopLayout extends StatelessWidget {
                     RzHeader(scaffoldKey: scaffoldKey),
 
                 /// Body
-                buildBody(templateModel, body) ?? const SizedBox(),
+                Expanded(
+                  child: buildBody(templateModel, body) ?? const SizedBox(),
+                ),
               ],
             ),
           ),
