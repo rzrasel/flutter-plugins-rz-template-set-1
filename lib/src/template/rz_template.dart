@@ -6,8 +6,27 @@ import 'package:rz_template_set_1/src/screen/rz_tablet_layout.dart';
 import 'package:rz_template_set_1/src/template/rz_responsive_design.dart';
 
 class RzTemplate extends StatelessWidget {
-  const RzTemplate({super.key, this.desktop, this.tablet, this.mobile, this.templateModel = const RzTemplateModel(),});
+  //const RzTemplate({super.key, required this.sidebar, this.desktop, this.tablet, this.mobile, this.templateModel = RzTemplateModel(sidebar: sidebar),});
+  RzTemplate({
+    super.key,
+    this.topbar,
+    required this.sidebar,
+    this.desktop,
+    this.tablet,
+    this.mobile,
+    RzTemplateModel? templateModel,
+  }) : templateModel =
+           templateModel ??
+           RzTemplateModel(
+             topbar: topbar,
+             sidebar: sidebar,
+             desktop: desktop,
+             tablet: tablet,
+             mobile: mobile,
+           );
 
+  final PreferredSizeWidget? topbar;
+  final Widget sidebar;
   final Widget? desktop;
   final Widget? tablet;
   final Widget? mobile;
@@ -17,9 +36,15 @@ class RzTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: RzResponsiveWidget(
-        desktop: templateModel.useLayout ? RzDesktopLayout(body: desktop) : desktop ?? Container(),
-        tablet: templateModel.useLayout ? RzTabletLayout(body: tablet ?? desktop) : tablet ?? Container(),
-        mobile: templateModel.useLayout ? RzMobileLayout(body: mobile ?? desktop) : mobile ?? Container(),
+        desktop: templateModel.useLayout
+            ? RzDesktopLayout(body: desktop, templateModel: templateModel,)
+            : desktop ?? Container(),
+        tablet: templateModel.useLayout
+            ? RzTabletLayout(body: tablet ?? desktop, templateModel: templateModel,)
+            : tablet ?? Container(),
+        mobile: templateModel.useLayout
+            ? RzMobileLayout(body: mobile ?? desktop, templateModel: templateModel,)
+            : mobile ?? Container(),
       ),
     );
   }

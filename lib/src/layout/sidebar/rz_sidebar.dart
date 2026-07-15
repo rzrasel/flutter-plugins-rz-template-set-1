@@ -39,8 +39,8 @@ class RzSidebar extends StatelessWidget {
                   children: [
                     Text("Menu", style: Theme.of(context).textTheme.bodySmall!.apply(letterSpacingDelta: 1.2),),
                     /// Menu Items
-                    RzMenuItem(itemName: "Home", icon: Iconsax.home, route: RzAppRoute.home,),
-                    RzMenuItem(itemName: "Login", icon: Iconsax.login, route: RzAppRoute.login,),
+                    //RzMenuItem(itemName: "Home", icon: Iconsax.home, route: RzAppRoute.home,),
+                    //RzMenuItem(itemName: "Login", icon: Iconsax.login, route: RzAppRoute.login,),
                   ],
                 ),
               )
