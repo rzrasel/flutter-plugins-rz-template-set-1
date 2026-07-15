@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rz_template_set_1/rz_template_set_1.dart';
-import 'package:rz_template_set_1/src/layout/header/rz_header.dart';
 import 'package:rz_template_set_1/src/layout/sidebar/rz_sidebar.dart';
 
 class RzMobileLayout extends StatelessWidget {
@@ -16,7 +15,7 @@ class RzMobileLayout extends StatelessWidget {
       key: scaffoldKey,
       //drawer: RzSidebar(),
       drawer: templateModel.sidebar,
-      appBar: templateModel.topbar ?? RzHeader(scaffoldKey: scaffoldKey,),
+      appBar: templateModel.buildTopbar(scaffoldKey) ?? RzHeader(scaffoldKey: scaffoldKey,),
       body: body ?? const SizedBox(),
     );
   }

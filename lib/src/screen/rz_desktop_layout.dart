@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:rz_template_set_1/rz_template_set_1.dart';
-import 'package:rz_template_set_1/src/layout/header/rz_header.dart';
 import 'package:rz_template_set_1/src/layout/sidebar/rz_sidebar.dart';
 
 class RzDesktopLayout extends StatelessWidget {
-  const RzDesktopLayout({super.key, this.body, required this.templateModel,});
+  RzDesktopLayout({super.key, this.body, required this.templateModel,});
 
   final Widget? body;
   final RzTemplateModel templateModel;
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       body: Row(
         children: [
           //const Expanded(child: RzSidebar()),
@@ -21,7 +22,7 @@ class RzDesktopLayout extends StatelessWidget {
             child: Column(
               children: [
                 /// Header
-                templateModel.topbar ?? RzHeader(),
+                templateModel.buildTopbar(scaffoldKey) ?? RzHeader(scaffoldKey: scaffoldKey,),
                 /// Body
                 body ?? const SizedBox(),
               ],

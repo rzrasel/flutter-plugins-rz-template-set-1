@@ -9,7 +9,8 @@ class RzTemplate extends StatelessWidget {
   //const RzTemplate({super.key, required this.sidebar, this.desktop, this.tablet, this.mobile, this.templateModel = RzTemplateModel(sidebar: sidebar),});
   RzTemplate({
     super.key,
-    this.topbar,
+    //this.topbar,
+    this.topbarBuilder,
     required this.sidebar,
     this.desktop,
     this.tablet,
@@ -18,14 +19,16 @@ class RzTemplate extends StatelessWidget {
   }) : templateModel =
            templateModel ??
            RzTemplateModel(
-             topbar: topbar,
+             //topbar: topbar,
+             topbarBuilder: topbarBuilder,
              sidebar: sidebar,
              desktop: desktop,
              tablet: tablet,
              mobile: mobile,
            );
 
-  final PreferredSizeWidget? topbar;
+  final RzTopbarBuilder? topbarBuilder;
+  //final PreferredSizeWidget? topbar;
   final Widget sidebar;
   final Widget? desktop;
   final Widget? tablet;
