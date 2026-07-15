@@ -25,7 +25,7 @@ class RzMobileLayout extends StatelessWidget {
   Widget? buildBody(RzTemplateModel templateModel, Widget? body) {
     Widget? bodyLayout = templateModel.mobile ?? body;
     return templateModel.useScrollView
-        ? Container(child: SingleChildScrollView(child: bodyLayout))
+        ? SingleChildScrollView(child: bodyLayout)
         : bodyLayout;
   }
 }

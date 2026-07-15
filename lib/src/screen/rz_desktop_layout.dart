@@ -40,7 +40,7 @@ class RzDesktopLayout extends StatelessWidget {
   Widget? buildBody(RzTemplateModel templateModel, Widget? body) {
     Widget? bodyLayout = templateModel.desktop ?? body;
     return templateModel.useScrollView
-        ? Container(child: SingleChildScrollView(child: bodyLayout))
+        ? SingleChildScrollView(child: bodyLayout)
         : bodyLayout;
   }
 }
