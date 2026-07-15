@@ -3,7 +3,7 @@ import 'package:rz_template_set_1/rz_template_set_1.dart';
 import 'package:rz_template_set_1/src/layout/sidebar/rz_sidebar.dart';
 
 class RzMobileLayout extends StatelessWidget {
-  RzMobileLayout({super.key, this.body, required this.templateModel,});
+  RzMobileLayout({super.key, this.body, required this.templateModel});
 
   final Widget? body;
   final RzTemplateModel templateModel;
@@ -15,8 +15,17 @@ class RzMobileLayout extends StatelessWidget {
       key: scaffoldKey,
       //drawer: RzSidebar(),
       drawer: templateModel.sidebar,
-      appBar: templateModel.buildTopbar(scaffoldKey) ?? RzHeader(scaffoldKey: scaffoldKey,),
-      body: templateModel.mobile ?? body ?? const SizedBox(),
+      appBar:
+          templateModel.buildTopbar(scaffoldKey) ??
+          RzHeader(scaffoldKey: scaffoldKey),
+      body: buildBody(templateModel, body) ?? const SizedBox(),
     );
+  }
+
+  Widget? buildBody(RzTemplateModel templateModel, Widget? body) {
+    Widget? bodyLayout = templateModel.mobile ?? body;
+    return templateModel.useScrollView
+        ? Container(child: SingleChildScrollView(child: bodyLayout))
+        : bodyLayout;
   }
 }
