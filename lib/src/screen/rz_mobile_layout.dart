@@ -16,7 +16,7 @@ class RzMobileLayout extends StatelessWidget {
       //drawer: RzSidebar(),
       drawer: templateModel.sidebar,
       appBar: templateModel.buildTopbar(scaffoldKey) ?? RzHeader(scaffoldKey: scaffoldKey,),
-      body: body ?? const SizedBox(),
+      body: templateModel.mobile ?? body ?? const SizedBox(),
     );
   }
 }

@@ -16,7 +16,7 @@ class RzTabletLayout extends StatelessWidget {
       //drawer: RzSidebar(),
       drawer: templateModel.sidebar,
       appBar: templateModel.buildTopbar(scaffoldKey) ?? RzHeader(scaffoldKey: scaffoldKey,),
-      body: body ?? const SizedBox(),
+      body: templateModel.tablet ?? body ?? const SizedBox(),
     );
   }
 }

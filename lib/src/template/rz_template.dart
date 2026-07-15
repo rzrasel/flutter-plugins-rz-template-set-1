@@ -37,17 +37,22 @@ class RzTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Widget? desktopLayout = templateModel.desktop ?? desktop ?? Container();
+    Widget? desktopLayout = templateModel.desktop ?? desktop;
+    Widget? tabletLayout = templateModel.tablet ?? tablet;
+    Widget? mobileLayout = templateModel.mobile ?? mobile;
+
     return Scaffold(
       body: RzResponsiveWidget(
         desktop: templateModel.useLayout
-            ? RzDesktopLayout(body: desktop, templateModel: templateModel,)
-            : desktop ?? Container(),
+            ? RzDesktopLayout(body: desktopLayout, templateModel: templateModel,)
+            : desktopLayout ?? Container(),
         tablet: templateModel.useLayout
-            ? RzTabletLayout(body: tablet ?? desktop, templateModel: templateModel,)
-            : tablet ?? Container(),
+            ? RzTabletLayout(body: tabletLayout ?? desktopLayout, templateModel: templateModel,)
+            : tabletLayout ?? Container(),
         mobile: templateModel.useLayout
-            ? RzMobileLayout(body: mobile ?? desktop, templateModel: templateModel,)
-            : mobile ?? Container(),
+            ? RzMobileLayout(body: mobileLayout ?? desktopLayout, templateModel: templateModel,)
+            : mobileLayout ?? Container(),
       ),
     );
   }
