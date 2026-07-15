@@ -22,6 +22,11 @@ class RzHeader extends StatelessWidget implements PreferredSizeWidget {
         color: Colors.yellow,
         child: AppBar(
           automaticallyImplyLeading: false,
+          backgroundColor: RzTheme.color.backgroundColor.fullWhite,
+          surfaceTintColor: Colors.transparent,
+          scrolledUnderElevation: 0,
+          elevation: 0,
+          shadowColor: Colors.transparent,
           /// Mobile menu icon
           //leading: !Responsive.isDesktop(context) ? IconButton(onPressed: ()=> scaffoldKey?.currentState?.openDrawer(), icon: Icon(Iconsax.menu)) : null,
           leading: _buildLeading(context),
